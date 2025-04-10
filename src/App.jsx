@@ -45,10 +45,9 @@ export default function Portfolio() {
         </div>
         <div className="card shadow-lg border-0 rounded-lg mx-auto" style={{ maxWidth: "800px" }}>
           <div className="card-body">
-            <h5 className="card-title">Template Responsivo com HTML e CSS</h5>
+            <h5 className="card-title"> CRUD para gestão de alunos.</h5>
             <p className="card-text">
-              Página web responsiva desenvolvida utilizando apenas HTML5 e CSS3, com uso
-              de media queries para adaptação a diferentes tamanhos de tela.
+            Este projeto é uma aplicação CRUD (Create, Read, Update, Delete) para a gestão de alunos.
             </p>
             <p className="text-muted mb-3">
               <strong>Tecnologias:</strong> HTML5, CSS3, PHP, Codeigniter 4, JWT, React, MySQL 8.
