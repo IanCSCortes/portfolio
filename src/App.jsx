@@ -42,12 +42,6 @@ export default function Portfolio() {
               Ver no GitHub
             </a>
           </div>
-        </div>
-      </section>
-
-      <section className="w-100 mb-5 text-center">
-        <h2 className="h3 mb-4">Projeto em Destaque</h2>
-        <div className="card shadow-lg border-0 rounded-lg mx-auto" style={{ maxWidth: "800px" }}>
           <div className="card-body">
             <h5 className="card-title">Template Responsivo com HTML e CSS</h5>
             <p className="card-text">
@@ -66,6 +60,13 @@ export default function Portfolio() {
               Ver no GitHub
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="w-100 mb-5 text-center">
+        <h2 className="h3 mb-4">Projeto em Destaque</h2>
+        <div className="card shadow-lg border-0 rounded-lg mx-auto" style={{ maxWidth: "800px" }}>
+          
         </div>
       </section>
 
