@@ -45,6 +45,30 @@ export default function Portfolio() {
         </div>
       </section>
 
+      <section className="w-100 mb-5 text-center">
+        <h2 className="h3 mb-4">Projeto em Destaque</h2>
+        <div className="card shadow-lg border-0 rounded-lg mx-auto" style={{ maxWidth: "800px" }}>
+          <div className="card-body">
+            <h5 className="card-title">Template Responsivo com HTML e CSS</h5>
+            <p className="card-text">
+              Página web responsiva desenvolvida utilizando apenas HTML5 e CSS3, com uso
+              de media queries para adaptação a diferentes tamanhos de tela.
+            </p>
+            <p className="text-muted mb-3">
+              <strong>Tecnologias:</strong> HTML5, CSS3
+            </p>
+            <a
+              href="https://github.com/IanCSCortes/Template-responsivo"
+              className="btn btn-primary btn-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver no GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="w-100 text-center">
         <h2 className="h3 mb-4">Contato</h2>
         <ul className="list-unstyled">
