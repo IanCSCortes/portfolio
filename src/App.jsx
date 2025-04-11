@@ -68,7 +68,7 @@ export default function Portfolio() {
         <h2 className="h3 mb-4">Contato</h2>
         <ul className="list-unstyled">
           <li>
-            <a className="text-decoration-none text-dark" href="mailto:ian@example.com">
+            <a className="text-decoration-none text-dark" href="mailto:iancscortes@gmail.com">
               <strong>Email:</strong> iancscortes@gmail.com
             </a>
           </li>
