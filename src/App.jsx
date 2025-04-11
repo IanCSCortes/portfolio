@@ -1,5 +1,5 @@
 import React from "react";
-import './index.css'; // Certifique-se de que o arquivo de estilo está correto
+import './index.css';
 
 export default function Portfolio() {
   return (
@@ -14,10 +14,8 @@ export default function Portfolio() {
       <section className="w-100 mb-5 text-center">
         <h2 className="h3 mb-4">Sobre mim</h2>
         <p className="text-muted mx-auto" style={{ maxWidth: "800px" }}>
-          Tenho 26 anos, estou em transição de carreira e focado nos estudos na área de
-          desenvolvimento web. Atualmente curso a formação Full Stack da B7Web, com foco em
-          Front-End. Estou em busca da minha primeira oportunidade na área para aplicar
-          meus conhecimentos e crescer como desenvolvedor.
+        Tenho 26 anos, sou um entusiasta da tecnologia em constante evolução, com grande interesse em desenvolvimento front-end. Atualmente, estou cursando o curso Full-Stack da B7Web, onde venho adquirindo uma sólida base de conhecimentos e habilidades práticas em diversas tecnologias web. Busco constantemente aprimorar minhas habilidades e aplicar os conceitos aprendidos em projetos reais.
+        Com foco em HTML, CSS, JavaScript e nas melhores práticas do desenvolvimento web, tenho me dedicado ao aprendizado contínuo para criar interfaces responsivas, acessíveis e de alta performance. Ao longo da minha jornada acadêmica e profissional, participei de projetos desafiadores, desenvolvendo sites e aplicações que priorizam a experiência do usuário. Estou em busca de uma oportunidade que me permita crescer como profissional, colaborar com equipes criativas e contribuir para soluções inovadoras no campo da tecnologia
         </p>
       </section>
 
