@@ -15,7 +15,7 @@ export default function Portfolio() {
         <h2 className="h3 mb-4">Sobre mim</h2>
         <p className="text-muted mx-auto" style={{ maxWidth: "800px" }}>
         Tenho 26 anos, sou um entusiasta da tecnologia em constante evolução, com grande interesse em desenvolvimento front-end. Atualmente, estou cursando o curso Full-Stack da B7Web, onde venho adquirindo uma sólida base de conhecimentos e habilidades práticas em diversas tecnologias web. Busco constantemente aprimorar minhas habilidades e aplicar os conceitos aprendidos em projetos reais.
-        Com foco em HTML, CSS, JavaScript e nas melhores práticas do desenvolvimento web, tenho me dedicado ao aprendizado contínuo para criar interfaces responsivas, acessíveis e de alta performance. Ao longo da minha jornada acadêmica e profissional, participei de projetos desafiadores, desenvolvendo sites e aplicações que priorizam a experiência do usuário. Estou em busca de uma oportunidade que me permita crescer como profissional, colaborar com equipes criativas e contribuir para soluções inovadoras no campo da tecnologia
+        Com foco em HTML, CSS, JavaScript e React, nas melhores práticas do desenvolvimento web, tenho me dedicado ao aprendizado contínuo para criar interfaces responsivas, acessíveis e de alta performance. Ao longo da minha jornada acadêmica e profissional, participei de projetos desafiadores, desenvolvendo sites e aplicações que priorizam a experiência do usuário. Estou em busca de uma oportunidade que me permita crescer como profissional, colaborar com equipes criativas e contribuir para soluções inovadoras no campo da tecnologia
         </p>
       </section>
 
