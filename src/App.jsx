@@ -50,10 +50,10 @@ function App() {
       <section id="inicio" className="hero wrap">
         <p className="eyebrow">PORTFÓLIO — 2026</p>
         <div className="hero-content">
-          <h1>Interfaces digitais<br /><em>simples e marcantes.</em></h1>
-          <div className="hero-aside"><p>Olá, eu sou Ian Cortes. Desenvolvedor Front-End focado em interfaces modernas, responsivas e bem resolvidas.</p><a className="text-link" href="#projetos">Conheça meu trabalho <ArrowUpRight /></a></div>
+          <h1>Construindo soluções<br /><em>que fazem sentido.</em></h1>
+          <div className="hero-profile"><img className="profile-photo" src="/ian-cortes.png" alt="Ian Carlos de Sousa Cortes" /><div className="hero-aside"><p>Olá, eu sou Ian Carlos de Sousa Cortes. Desenvolvedor focado em JavaScript, Node.js, APIs e banco de dados.</p><a className="text-link" href="#projetos">Conheça meu trabalho <ArrowUpRight /></a></div></div>
         </div>
-        <div className="hero-line"><span>DESENVOLVEDOR FRONT-END</span><span>HTML · CSS · JAVASCRIPT · REACT</span></div>
+        <div className="hero-line"><span>DESENVOLVEDOR · LAVRAS, MG</span><span>JAVASCRIPT · NODE.JS · APIS · BANCO DE DADOS</span></div>
       </section>
 
       <section id="projetos" className="projects-section wrap">
@@ -73,7 +73,7 @@ function App() {
         </div>
       </section>
 
-      <section id="sobre" className="about wrap"><p className="eyebrow">02 — SOBRE MIM</p><div><h2>Aprendizado contínuo,<br /><em>feito na prática.</em></h2><p>Tenho 28 anos e sou um entusiasta da tecnologia em constante evolução, com grande interesse em desenvolvimento Front-End. Atualmente estudo Full Stack na B7Web, construindo uma base sólida e prática em tecnologias web.</p><p>Com foco em HTML, CSS, JavaScript e React, busco criar interfaces responsivas, acessíveis e de alta performance. Estou em busca de uma oportunidade para crescer profissionalmente, colaborar com equipes criativas e contribuir para soluções inovadoras.</p></div></section>
+      <section id="sobre" className="about wrap"><p className="eyebrow">02 — SOBRE MIM</p><div><h2>Curiosidade técnica,<br /><em>resultado na prática.</em></h2><p>Cursando Análise e Desenvolvimento de Sistemas, com foco em back-end, lógica e construção de APIs.</p><p>Venho de experiência profissional em ambientes de alta pressão, que fortaleceu minha responsabilidade, organização, resolução de problemas e trabalho em equipe. Busco uma oportunidade na tecnologia para evoluir tecnicamente e contribuir com comprometimento e mentalidade de equipe.</p><p className="skills">COMPETÊNCIAS — PHP · CSS · JAVASCRIPT · GIT · MYSQL</p></div></section>
 
       <footer id="contato" className="footer wrap"><p className="eyebrow">03 — VAMOS CONVERSAR?</p><a className="contact-email" href="mailto:iancscortes@gmail.com">iancscortes@gmail.com <ArrowUpRight /></a><div className="footer-bottom"><span>© {new Date().getFullYear()} Ian Cortes</span><div><a href={profileUrl} target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/iancortes" target="_blank" rel="noreferrer">LinkedIn</a></div></div></footer>
     </main>
