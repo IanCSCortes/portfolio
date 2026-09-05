@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 const profileUrl = 'https://github.com/IanCSCortes'
-const hiddenRepositories = new Set(['portfolio', 'iankadu'])
+const hiddenRepositories = new Set(['portfolio', 'iankadu', 'simple-crud'])
 const projectDetails = {
   'revista-elitte': {
     description: 'Site da Revista Elitte, desenvolvido com React e Node.js. O projeto ainda está em construção.',
+    liveUrl: 'https://revista-elitte.vercel.app/',
   },
   'template-responsivo': {
     description: 'Página web responsiva desenvolvida utilizando HTML5 e CSS3, com media queries para adaptação a diferentes tamanhos de tela.',
     technologies: 'HTML5 · CSS3',
+    liveUrl: 'https://template-responsivo.vercel.app/',
   },
   'simple-crud': {
     description: 'Aplicação CRUD para gestão de alunos, com criação, consulta, edição e exclusão de registros.',
@@ -66,7 +68,7 @@ function App() {
             return (
             <article className="project-card" key={project.id}>
               <div className="project-number">{String(index + 1).padStart(2, '0')}</div>
-              <div className="project-body"><h3>{project.name.replaceAll('-', ' ')}</h3><p>{details?.description || project.description || 'Projeto desenvolvido para explorar soluções web e boas experiências de uso.'}</p><div className="project-meta"><span>{details?.technologies || project.language || 'Web'}</span><span>{project.stargazers_count > 0 ? `★ ${project.stargazers_count}` : 'Repositório público'}</span></div><a href={project.html_url} target="_blank" rel="noreferrer" aria-label={`Abrir projeto ${project.name} no GitHub`}>Ver projeto <ArrowUpRight /></a></div>
+              <div className="project-body"><h3>{project.name.replaceAll('-', ' ')}</h3><p>{details?.description || project.description || 'Projeto desenvolvido para explorar soluções web e boas experiências de uso.'}</p><div className="project-meta"><span>{details?.technologies || project.language || 'Web'}</span><span>{project.stargazers_count > 0 ? `★ ${project.stargazers_count}` : 'Repositório público'}</span></div><div className="project-links">{(details?.liveUrl || project.homepage) && <a className="preview-link" href={details?.liveUrl || project.homepage} target="_blank" rel="noreferrer" aria-label={`Abrir preview do projeto ${project.name}`}>Ver preview <ArrowUpRight /></a>}<a href={project.html_url} target="_blank" rel="noreferrer" aria-label={`Abrir repositório ${project.name} no GitHub`}>Ver repositório <ArrowUpRight /></a></div></div>
             </article>
             )
           })}
