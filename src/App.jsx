@@ -1,87 +1,67 @@
-import React from "react";
-import './index.css';
+import { useEffect, useState } from 'react'
+import './App.css'
 
-export default function Portfolio() {
-  return (
-    <main className="container d-flex flex-column justify-content-center align-items-center py-5">
-      <header className="text-center mb-5">
-        <h1 className="display-4 mb-2 text-primary">Ian Cortes</h1>
-        <p className="lead text-muted mb-4">
-          Desenvolvedor Front-End focado em interfaces modernas e responsivas
-        </p>
-      </header>
+const profileUrl = 'https://github.com/IanCSCortes'
+const hiddenRepositories = new Set(['portfolio', 'iankadu'])
 
-      <section className="w-100 mb-5 text-center">
-        <h2 className="h3 mb-4">Sobre mim</h2>
-        <p className="text-muted mx-auto" style={{ maxWidth: "800px" }}>
-        Tenho 26 anos, sou um entusiasta da tecnologia em constante evolução, com grande interesse em desenvolvimento front-end. Atualmente, estou cursando o curso Full-Stack da B7Web, onde venho adquirindo uma sólida base de conhecimentos e habilidades práticas em diversas tecnologias web. Busco constantemente aprimorar minhas habilidades e aplicar os conceitos aprendidos em projetos reais.
-        Com foco em HTML, CSS, JavaScript e React, nas melhores práticas do desenvolvimento web, tenho me dedicado ao aprendizado contínuo para criar interfaces responsivas, acessíveis e de alta performance. Ao longo da minha jornada acadêmica e profissional, participei de projetos desafiadores, desenvolvendo sites e aplicações que priorizam a experiência do usuário. Estou em busca de uma oportunidade que me permita crescer como profissional, colaborar com equipes criativas e contribuir para soluções inovadoras no campo da tecnologia
-        </p>
-      </section>
-
-      <section className="w-100 mb-5 text-center">
-        <h2 className="h3 mb-4">Projeto em Destaque</h2>
-        <div className="card shadow-lg border-0 rounded-lg mx-auto" style={{ maxWidth: "800px" }}>
-          <div className="card-body">
-            <h5 className="card-title">Template Responsivo com HTML e CSS</h5>
-            <p className="card-text">
-              Página web responsiva desenvolvida utilizando apenas HTML5 e CSS3, com uso
-              de media queries para adaptação a diferentes tamanhos de tela.
-            </p>
-            <p className="text-muted mb-3">
-              <strong>Tecnologias:</strong> HTML5, CSS3
-            </p>
-            <a
-              href="https://github.com/IanCSCortes/Template-responsivo"
-              className="btn btn-primary btn-lg"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver no GitHub
-            </a>
-          </div>
-        </div>
-        <div className="card shadow-lg border-0 rounded-lg mx-auto" style={{ maxWidth: "800px" }}>
-          <div className="card-body">
-            <h5 className="card-title"> CRUD para gestão de alunos.</h5>
-            <p className="card-text">
-            Este projeto é uma aplicação CRUD (Create, Read, Update, Delete) para a gestão de alunos.
-            </p>
-            <p className="text-muted mb-3">
-              <strong>Tecnologias:</strong> HTML5, CSS3, PHP, Codeigniter 4, JWT, React, MySQL 8.
-            </p>
-            <a
-              href="https://github.com/IanCSCortes/Simple-CRUD"
-              className="btn btn-primary btn-lg"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver no GitHub
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="w-100 text-center">
-        <h2 className="h3 mb-4">Contato</h2>
-        <ul className="list-unstyled">
-          <li>
-            <a className="text-decoration-none text-dark" href="mailto:iancscortes@gmail.com">
-              <strong>Email:</strong> iancscortes@gmail.com
-            </a>
-          </li>
-          <li>
-            <a className="text-decoration-none text-dark" href="https://linkedin.com/in/iancortes" target="_blank" rel="noopener noreferrer">
-              <strong>LinkedIn:</strong> linkedin.com/in/iancortes
-            </a>
-          </li>
-          <li>
-            <a className="text-decoration-none text-dark" href="https://github.com/IanCSCortes" target="_blank" rel="noopener noreferrer">
-              <strong>GitHub:</strong> github.com/IanCSCortes
-            </a>
-          </li>
-        </ul>
-      </section>
-    </main>
-  );
+function ArrowUpRight() {
+  return <span aria-hidden="true" className="arrow">↗</span>
 }
+
+function App() {
+  const [projects, setProjects] = useState([])
+  const [status, setStatus] = useState('loading')
+
+  useEffect(() => {
+    async function loadProjects() {
+      try {
+        const response = await fetch('https://api.github.com/users/IanCSCortes/repos?sort=updated&per_page=12')
+        if (!response.ok) throw new Error('GitHub indisponível')
+        const repos = await response.json()
+        setProjects(repos.filter((repo) => !repo.fork && !repo.archived && !hiddenRepositories.has(repo.name.toLowerCase())))
+        setStatus('ready')
+      } catch {
+        setStatus('error')
+      }
+    }
+    loadProjects()
+  }, [])
+
+  return (
+    <main>
+      <nav className="nav wrap" aria-label="Navegação principal">
+        <a className="brand" href="#inicio">IC<span>.</span></a>
+        <div className="nav-links"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></div>
+      </nav>
+
+      <section id="inicio" className="hero wrap">
+        <p className="eyebrow">PORTFÓLIO — 2026</p>
+        <div className="hero-content">
+          <h1>Interfaces digitais<br /><em>simples e marcantes.</em></h1>
+          <div className="hero-aside"><p>Olá, eu sou Ian Cortes. Desenvolvedor em formação, criando experiências web funcionais e cuidadosas.</p><a className="text-link" href="#projetos">Conheça meu trabalho <ArrowUpRight /></a></div>
+        </div>
+        <div className="hero-line"><span>DESENVOLVEDOR FRONT-END</span><span>HTML · CSS · JAVASCRIPT · REACT</span></div>
+      </section>
+
+      <section id="projetos" className="projects-section wrap">
+        <div className="section-heading"><p className="eyebrow">01 — SELEÇÃO</p><h2>Projetos no<br /><em>GitHub.</em></h2><a className="outline-button" href={profileUrl} target="_blank" rel="noreferrer">Ver perfil completo <ArrowUpRight /></a></div>
+        <div className="project-grid" aria-live="polite">
+          {status === 'loading' && <p className="feedback">Carregando projetos selecionados…</p>}
+          {status === 'error' && <p className="feedback">Não foi possível carregar os projetos agora. <a href={profileUrl} target="_blank" rel="noreferrer">Visite meu GitHub <ArrowUpRight /></a></p>}
+          {projects.map((project, index) => (
+            <article className="project-card" key={project.id}>
+              <div className="project-number">{String(index + 1).padStart(2, '0')}</div>
+              <div className="project-body"><h3>{project.name.replaceAll('-', ' ')}</h3><p>{project.description || 'Projeto desenvolvido para explorar soluções web e boas experiências de uso.'}</p><div className="project-meta"><span>{project.language || 'Web'}</span><span>{project.stargazers_count > 0 ? `★ ${project.stargazers_count}` : 'Repositório público'}</span></div><a href={project.html_url} target="_blank" rel="noreferrer" aria-label={`Abrir projeto ${project.name} no GitHub`}>Ver projeto <ArrowUpRight /></a></div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="sobre" className="about wrap"><p className="eyebrow">02 — SOBRE MIM</p><div><h2>Aprendizado contínuo,<br /><em>feito na prática.</em></h2><p>Tenho 26 anos e estudo desenvolvimento Full Stack na B7Web. Meu foco está em transformar ideias em interfaces responsivas, acessíveis e bem resolvidas — com atenção à experiência de cada pessoa que usa o produto.</p></div></section>
+
+      <footer id="contato" className="footer wrap"><p className="eyebrow">03 — VAMOS CONVERSAR?</p><a className="contact-email" href="mailto:iancscortes@gmail.com">iancscortes@gmail.com <ArrowUpRight /></a><div className="footer-bottom"><span>© {new Date().getFullYear()} Ian Cortes</span><div><a href={profileUrl} target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/iancortes" target="_blank" rel="noreferrer">LinkedIn</a></div></div></footer>
+    </main>
+  )
+}
+
+export default App
