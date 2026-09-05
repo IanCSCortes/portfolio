@@ -50,7 +50,7 @@ function App() {
       <section id="inicio" className="hero wrap">
         <p className="eyebrow">PORTFÓLIO — 2026</p>
         <div className="hero-content">
-          <h1><span className="headline-strong">Construindo soluções</span><br /><em>que fazem sentido.</em></h1>
+          <h1><span className="headline-strong">Do problema à solução,</span><br /><em>com tecnologia.</em></h1>
           <div className="hero-profile"><img className="profile-photo" src="/ian-cortes.png" alt="Ian Carlos de Sousa Cortes" /><div className="hero-aside"><p>Olá, eu sou Ian Carlos de Sousa Cortes. Desenvolvedor focado em JavaScript, Node.js, APIs e banco de dados.</p><a className="text-link" href="#projetos">Conheça meu trabalho <ArrowUpRight /></a></div></div>
         </div>
         <div className="hero-line"><span>DESENVOLVEDOR · LAVRAS, MG</span><span>JAVASCRIPT · NODE.JS · APIS · BANCO DE DADOS</span></div>
