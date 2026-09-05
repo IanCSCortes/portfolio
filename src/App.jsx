@@ -3,6 +3,19 @@ import './App.css'
 
 const profileUrl = 'https://github.com/IanCSCortes'
 const hiddenRepositories = new Set(['portfolio', 'iankadu'])
+const projectDetails = {
+  'revista-elitte': {
+    description: 'Site da Revista Elitte, desenvolvido com React e Node.js. O projeto ainda está em construção.',
+  },
+  'template-responsivo': {
+    description: 'Página web responsiva desenvolvida utilizando HTML5 e CSS3, com media queries para adaptação a diferentes tamanhos de tela.',
+    technologies: 'HTML5 · CSS3',
+  },
+  'simple-crud': {
+    description: 'Aplicação CRUD para gestão de alunos, com criação, consulta, edição e exclusão de registros.',
+    technologies: 'HTML5 · CSS3 · PHP · CodeIgniter 4 · JWT · React · MySQL 8',
+  },
+}
 
 function ArrowUpRight() {
   return <span aria-hidden="true" className="arrow">↗</span>
@@ -38,7 +51,7 @@ function App() {
         <p className="eyebrow">PORTFÓLIO — 2026</p>
         <div className="hero-content">
           <h1>Interfaces digitais<br /><em>simples e marcantes.</em></h1>
-          <div className="hero-aside"><p>Olá, eu sou Ian Cortes. Desenvolvedor em formação, criando experiências web funcionais e cuidadosas.</p><a className="text-link" href="#projetos">Conheça meu trabalho <ArrowUpRight /></a></div>
+          <div className="hero-aside"><p>Olá, eu sou Ian Cortes. Desenvolvedor Front-End focado em interfaces modernas, responsivas e bem resolvidas.</p><a className="text-link" href="#projetos">Conheça meu trabalho <ArrowUpRight /></a></div>
         </div>
         <div className="hero-line"><span>DESENVOLVEDOR FRONT-END</span><span>HTML · CSS · JAVASCRIPT · REACT</span></div>
       </section>
@@ -48,16 +61,19 @@ function App() {
         <div className="project-grid" aria-live="polite">
           {status === 'loading' && <p className="feedback">Carregando projetos selecionados…</p>}
           {status === 'error' && <p className="feedback">Não foi possível carregar os projetos agora. <a href={profileUrl} target="_blank" rel="noreferrer">Visite meu GitHub <ArrowUpRight /></a></p>}
-          {projects.map((project, index) => (
+          {projects.map((project, index) => {
+            const details = projectDetails[project.name.toLowerCase()]
+            return (
             <article className="project-card" key={project.id}>
               <div className="project-number">{String(index + 1).padStart(2, '0')}</div>
-              <div className="project-body"><h3>{project.name.replaceAll('-', ' ')}</h3><p>{project.description || 'Projeto desenvolvido para explorar soluções web e boas experiências de uso.'}</p><div className="project-meta"><span>{project.language || 'Web'}</span><span>{project.stargazers_count > 0 ? `★ ${project.stargazers_count}` : 'Repositório público'}</span></div><a href={project.html_url} target="_blank" rel="noreferrer" aria-label={`Abrir projeto ${project.name} no GitHub`}>Ver projeto <ArrowUpRight /></a></div>
+              <div className="project-body"><h3>{project.name.replaceAll('-', ' ')}</h3><p>{details?.description || project.description || 'Projeto desenvolvido para explorar soluções web e boas experiências de uso.'}</p><div className="project-meta"><span>{details?.technologies || project.language || 'Web'}</span><span>{project.stargazers_count > 0 ? `★ ${project.stargazers_count}` : 'Repositório público'}</span></div><a href={project.html_url} target="_blank" rel="noreferrer" aria-label={`Abrir projeto ${project.name} no GitHub`}>Ver projeto <ArrowUpRight /></a></div>
             </article>
-          ))}
+            )
+          })}
         </div>
       </section>
 
-      <section id="sobre" className="about wrap"><p className="eyebrow">02 — SOBRE MIM</p><div><h2>Aprendizado contínuo,<br /><em>feito na prática.</em></h2><p>Tenho 26 anos e estudo desenvolvimento Full Stack na B7Web. Meu foco está em transformar ideias em interfaces responsivas, acessíveis e bem resolvidas — com atenção à experiência de cada pessoa que usa o produto.</p></div></section>
+      <section id="sobre" className="about wrap"><p className="eyebrow">02 — SOBRE MIM</p><div><h2>Aprendizado contínuo,<br /><em>feito na prática.</em></h2><p>Tenho 28 anos e sou um entusiasta da tecnologia em constante evolução, com grande interesse em desenvolvimento Front-End. Atualmente estudo Full Stack na B7Web, construindo uma base sólida e prática em tecnologias web.</p><p>Com foco em HTML, CSS, JavaScript e React, busco criar interfaces responsivas, acessíveis e de alta performance. Estou em busca de uma oportunidade para crescer profissionalmente, colaborar com equipes criativas e contribuir para soluções inovadoras.</p></div></section>
 
       <footer id="contato" className="footer wrap"><p className="eyebrow">03 — VAMOS CONVERSAR?</p><a className="contact-email" href="mailto:iancscortes@gmail.com">iancscortes@gmail.com <ArrowUpRight /></a><div className="footer-bottom"><span>© {new Date().getFullYear()} Ian Cortes</span><div><a href={profileUrl} target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/iancortes" target="_blank" rel="noreferrer">LinkedIn</a></div></div></footer>
     </main>
